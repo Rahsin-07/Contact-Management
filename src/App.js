@@ -48,7 +48,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={ <ContactList contacts={contacts} deleteContact={deleteContact} updateContact={updateContact}  /> }/>
+        <Route path="/" element={ <ContactList contacts={contacts} deleteContact={deleteContact} updateContact={updateContact} addContact={addContact}   /> }/>
         <Route path="/add" element={<AddContact addContact={addContact} />}/>
         <Route path="/edit/:id" element={<EditContact contacts={contacts} updateContact={updateContact}/>} />
       </Routes>

@@ -98,6 +98,36 @@ body {
   color: #ff5252;
 }
 
+.side-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 350px;
+  height: 100%;
+  background: white;
+  box-shadow: -3px 0 10px rgba(0,0,0,0.2);
+  padding: 20px;
+  animation: slideIn 0.3s ease;
+  z-index: 1000;
+}
+
+@keyframes slideIn {
+  from { right: -400px; }
+  to { right: 0; }
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  50% { transform: translateX(6px); }
+  75% { transform: translateX(-6px); }
+  100% { transform: translateX(0); }
+}
+
+.shake {
+  animation: shake 0.3s ease;
+}
+
 .panel-content input {
   width: 100%;
   padding: 5px;
