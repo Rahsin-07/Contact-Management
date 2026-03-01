@@ -1,12 +1,5 @@
 import React, { useState } from "react";
-import {
-  FaPlusCircle,
-  FaUserCircle,
-  FaEye,
-  FaTrash,
-  FaEdit,
-  FaTimes
-} from "react-icons/fa";
+import { FaPlusCircle,FaUserCircle,FaEye,FaTrash,FaEdit,FaTimes} from "react-icons/fa";
 
 function ContactList({ contacts, deleteContact, updateContact, addContact }) {
   const [search, setSearch] = useState("");
@@ -52,8 +45,7 @@ function ContactList({ contacts, deleteContact, updateContact, addContact }) {
     <div className="mobile-container">
       <div className="header">
         All Contacts
-        <FaPlusCircle
-          className="add-icon"
+        <FaPlusCircle className="add-icon"
           onClick={() => {
             setSelectedContact(null);
             setEditContact(null);
@@ -63,9 +55,7 @@ function ContactList({ contacts, deleteContact, updateContact, addContact }) {
       </div>
 
       <div className="search-box">
-        <input
-          placeholder="Search Contact"
-          value={search}
+        <input placeholder="Search Contact" value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
@@ -86,8 +76,7 @@ function ContactList({ contacts, deleteContact, updateContact, addContact }) {
               </div>
 
               <div className="icons">
-                <FaEye
-                  onClick={() => {
+                <FaEye onClick={() => {
                     if (editContact || showAdd) {
                       setShake(true);
                       setTimeout(() => setShake(false), 400);
@@ -99,8 +88,7 @@ function ContactList({ contacts, deleteContact, updateContact, addContact }) {
 
                 <FaTrash onClick={() => setDeleteConfirm(c)} />
 
-                <FaEdit
-                  onClick={() => {
+                <FaEdit onClick={() => {
                     setSelectedContact(null);
                     setShowAdd(false);
                     setEditContact(c);
@@ -143,31 +131,27 @@ function ContactList({ contacts, deleteContact, updateContact, addContact }) {
               handleUpdate(editContact);
             }}
           >
-            <input
-              value={editContact.name}
+            <input value={editContact.name}
               onChange={(e) =>
                 setEditContact({ ...editContact, name: e.target.value })
               }
               required
             />
 
-            <input
-              value={editContact.mobile}
+            <input value={editContact.mobile}
               onChange={(e) =>
                 setEditContact({ ...editContact, mobile: e.target.value })
               }
               required
             />
 
-            <input
-              value={editContact.email || ""}
+            <input value={editContact.email || ""}
               onChange={(e) =>
                 setEditContact({ ...editContact, email: e.target.value })
               }
             />
 
-            <input
-              value={editContact.address || ""}
+            <input value={editContact.address || ""}
               onChange={(e) =>
                 setEditContact({ ...editContact, address: e.target.value })
               }
